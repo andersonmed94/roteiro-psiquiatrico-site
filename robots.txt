@@ -1,2 +1,12 @@
+# ATENCAO: em GitHub Pages de PROJETO o site e servido em /<repo>/, e crawlers so
+# leem o robots.txt da RAIZ do dominio. Ou seja: este arquivo hoje e INERTE --
+# quem segura o site fora do Google e a meta tag noindex gerada por
+# build/build_landing.py (NOINDEX = True), nao este arquivo.
+#
+# Ele fica aqui de proposito para o dia em que houver dominio proprio: nesse
+# cenario o arquivo passa a valer, e por isso ele NAO pode bloquear tudo --
+# um "Disallow: /" impediria o Google de rastrear e, sem rastrear, ele nunca
+# leria o noindex (a URL poderia ser indexada "sem descricao"). Rastreio
+# liberado + noindex e a combinacao que realmente mantem o site fora do indice.
 User-agent: *
-Disallow: /
+Allow: /
